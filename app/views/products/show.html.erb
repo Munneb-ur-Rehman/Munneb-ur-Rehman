@@ -1,0 +1,44 @@
+
+<section class="home" id="home">
+
+    <div class="image">
+        <br><%=image_tag(@product.image, width: "400", height: "350")%><br>
+    </div>
+
+    <div class="content">
+      <span id='id'><strong>Name:</strong></span>
+      <h3 id='hello'><%=@product.name %></h3>
+        <span id='id'><strong>Price:</strong></span>
+       <h3 id='hello'> <%=@product.price%> R.s</h3><br>
+       <span id='id'> <strong>description:</strong></span>
+        <h3 id='hello'><%=@product.description%></h3><br>
+         
+      <%if @cart.include?(@product)%>
+          <%=button_to 'delete to cart', remove_from_cart_path(@product), method: :delete, class:"btn btn-primary btn-lg"%>
+      <%else%>
+          <td><%= link_to ' Add to Cart ..', add_to_cart_path(@product.id), method: :post, class:"btn btn-primary btn-lg" %></td>
+      <%end%>
+        <td><%= button_to 'Buy this item.', checkout_create_path, params:{id: @product.id}, remote: true,  class:"btn btn-secondary btn-lg" %></td>
+       
+    </div>
+       
+</section>
+<div class="text-center">
+
+<p><br><br><br>
+       <td><%= link_to 'Edit product', edit_product_path(),class:"btn btn-success"%></td>
+       
+      <td><%= link_to 'Delete product', product_path(), method: :delete , class:"btn btn-danger"%></td>
+      </p>
+</div>
+  <br><br><br><br><br><br>
+<h2 class="text-center">Comments about product</h2>
+
+<%= render @product.comments %> 
+ 
+<%# <h2>Add a comment:</h2> %>
+ 
+<%= render 'comments/form' %>
+<div class="text-center"> 
+<td><%= link_to 'back to products', products_path(),class:"btn btn-light"%></td>
+</div>

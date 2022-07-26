@@ -1,0 +1,173 @@
+// Place all the styles related to the Product controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root{
+  --green:#27ae60;
+  --black:#2c2c54;
+}
+
+*{
+  font-family: 'Nunito', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+.home{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .home .image{
+    flex:1 1 40rem;
+    padding-top: 1rem;
+    padding-left: 5rem;
+  }
+  
+  
+  .home .content{
+    padding-top: 2rem;
+    flex:1 1 40rem;
+  }
+  
+  .home .content #id{
+   height: 20px;
+   width: 20px;
+   font-size: 2.5rem;
+    color:rgb(51, 18, 18);
+  }
+  
+  .home .content #hello{
+
+    font-size: 40px;
+    color:var(--black);
+  }
+*::selection{
+  background:var(--green);
+  color:#fff;
+}
+.home .content{
+    flex:1 1 40rem;
+  }
+  
+  .home .content span{
+    font-size: 3rem;
+    color:#666;
+  }
+  
+  .home .content h3{
+    font-size: 5rem;
+    color:var(--black);
+  }
+
+.product .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.5rem;
+}
+
+.product .box-container .box{
+  flex:1 1 30rem;
+  text-align: center;
+  padding:2rem;
+  border:.1rem solid rgba(0,0,0,.3);
+  border-radius: .5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.product .box-container .box img{
+  height: 20rem;
+}
+
+
+
+.product .box-container .box .icons{
+  position: absolute;
+  top:.5rem; right:-6rem;
+}
+
+.product .box-container .box:hover .icons{
+  right:1rem;
+}
+
+.product .box-container .box .icons a{
+  display: block;
+  height:4.5rem;
+  width:4.5rem;
+  line-height: 4.5rem;
+  font-size: 1.7rem;
+  color:var(--black);
+  background:rgba(0,0,0,.05);
+  border-radius: 50%;
+  margin-top: .7rem;
+}
+
+.product .box-container .box .icons a:hover{
+  background:var(--green);
+  color:#fff;
+}
+
+.product .box-container .box h3{
+  color:var(--black);
+  font-size: 2.5rem;
+}
+
+
+.product .box-container .box .price{
+  font-size: 2rem;
+  color:#333;
+  padding:.5rem 0;
+}
+
+.product .box-container .box .price span{
+  font-size: 1.5rem;
+  color:#999;
+  text-decoration: line-through;
+}
+
+.product .box-container .box .quantity{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: .5rem;
+}
+
+.product .box-container .box .quantity span{
+  padding:0 .7rem;
+  font-size: 1.0rem;
+}
+
+
+.product .box-container .box .quantity input{
+  border:.1rem solid rgba(0,0,0,.3);
+  font-size: 0.7rem;
+  font-weight: bolder;
+  color:var(--black);
+  padding:.4rem;
+  background:rgba(0,0,0,.05);
+}
+
+.product .box-container .box .btn{
+  display: block;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

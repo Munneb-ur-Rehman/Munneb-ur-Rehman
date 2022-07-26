@@ -1,0 +1,19 @@
+<h1> search result</h1>
+<section class="product" id="product">
+<div class="box-container">
+ <% @products.each do |product| %>
+       <div class="box">
+  <%=image_tag(product.image, width: "350", height: "200")%><br>
+  <strong>Name:</strong>
+  <%= product.name %> <br>
+  <strong>Price:</strong>
+  <%= product.price %>Rs<br>
+  <strong>Description:</strong>
+  <%= product.description%><br>
+  
+   <%= link_to 'Show', product_path(product), class:"btn btn-success" %>
+     <div class="quantity"></div>
+     </div>
+      <% end %>
+      </div>
+      </section>

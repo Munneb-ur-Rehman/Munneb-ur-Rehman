@@ -1,0 +1,43 @@
+
+<P>
+   <h2 class="text-center">Create new product</h2>
+   </p>
+<%= form_with  model: @product, local: true do |form| %>
+<% if @product.errors.any?%>
+<div id="error explanation">
+<h2>
+<%= pluralize(@product.errors.count, "error")%> prohibited this data from being saved:
+</h2>
+<ul>
+<% @product.errors.full_messages.each do |msg|%>
+<li><%=msg%></li>
+<%end%>
+</ul>
+</div>
+<%end%>
+
+ <p>
+         <%=form.label :Product_Name, class:"form-label"%><br>
+        <%=form.text_field :name, placeholder: "please enter product name" ,class:"form-control"%>
+        </p>
+         <p>
+        <%=form.label :Product_price ,class:"form-label"%><br>
+        <%=form.text_field :price,placeholder: "please enter product price" ,class:"form-control"%>
+        </p>
+         <p>
+        <%=form.label :Product_Description ,class:"form-label"%><br>
+        <%=form.text_field :description, placeholder: "please enter product Description",class:"form-control"%>
+        </p>
+        <p>
+        <%=form.label :image,class:"form-label"%>
+        <%=form.file_field :image,class:"form-control" %>
+        </p>
+      
+    <p class="text-center">
+    <%= form.submit class:"btn btn-success" %>
+  
+   <%= link_to 'Return to products', products_path(), class:"btn btn-danger" %>
+  </p>
+ 
+
+<% end %>

@@ -1,0 +1,11 @@
+    <p class="form-control" >
+    
+  <h2><%= comment.commenter  %></h2>
+   <span ><%= comment.body %></span>
+</p>
+
+<p>
+  <%= link_to 'Delete', [comment.product, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } ,class:"btn btn-danger"%>
+</p>

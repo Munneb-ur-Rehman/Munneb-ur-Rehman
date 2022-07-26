@@ -1,0 +1,30 @@
+<h2>My cart</h2>
+<section class="product" id="product">
+<div class="box-container">
+
+<p>your cart is empty</p>
+
+<% @cart.each do |product|%>
+       <div class="box">
+  <%=image_tag(product.image, width: "300", height: "200")%><br>
+  <strong>Name:</strong>
+  <%= product.name %> <br>
+  <strong>Price:</strong>
+  <%= product.price %>Rs<br>
+  <strong>Description:</strong>
+  <%= product.description%><br>
+  <%# <div class="quantity"></div> %>
+   
+  
+   <%= link_to 'remove from cart', remove_from_cart_path(product), method: :delete, class:"btn btn-secondary" %>
+    
+     
+     
+     
+    
+     </div>
+      <% end %>
+     
+
+      </div>
+      </section>

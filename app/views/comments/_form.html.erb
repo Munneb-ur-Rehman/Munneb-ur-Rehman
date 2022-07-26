@@ -1,0 +1,19 @@
+<div class="text-center"> 
+<h2>Add new comment:</h2>
+</div>
+<%= form_with(model: [ @product, @product.comments.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :commenter_name %><br>
+    <%= form.text_field :commenter, class:"form-control" %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body ,class:"form-control" %>
+  </p>
+  <div class="text-center"> 
+  <p>
+    <%= form.submit class:"btn btn-success"  %>
+  </p>
+  </div>
+  </div>
+<% end %>

@@ -1,0 +1,49 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+   <% if user_signed_in? %>
+    <h1 id='hello'><%="Welcome Mr.#{current_user.userfname}"%></h1>
+    <% else %>
+    <h1 id='hello'> Project</h1>
+    <%end%>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+     <%= link_to 'All Products', products_path(), class:"navbar-brand"%>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+        <% if user_signed_in? %>
+            <%= link_to 'Create New Product', new_product_path(), class:"navbar-brand"%>
+            <%end%>
+        </li>
+        <li class="nav-item">
+           <%= link_to 'My Cart', (), class:"navbar-brand"%>
+        </li>
+        
+       
+         <li class="nav-item">
+         <% if user_signed_in? %>
+        <%= link_to 'Edit Profile', edit_user_registration_path() , class:"navbar-brand"%>
+      <%= link_to 'Sign out', destroy_user_session_path(), method: :delete , class:"navbar-brand" %>
+        <% else %>
+      <%= link_to 'Login',  new_user_session_path(), class:"navbar-brand" %>
+     <%= link_to 'Signup', new_user_registration_path(), class:"navbar-brand"%>
+       <%end%>
+        </li>
+      </ul>
+      <form class="d-flex" action="/search">
+        <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
